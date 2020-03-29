@@ -18,14 +18,14 @@ from torch.autograd import Variable
 import time
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-data_dir = "dataset_updated" 
+data_dir = "dataset_updated" #The name of the profile to use
 
 
 LR = 1e-6 #learning_rate
 
 
 data_transform = {x:transforms.Compose(
-    [transforms.Scale([128,128]),  #pixel->224*224
+    [transforms.Scale([128,128]),  #pixel->128*128
     transforms.ToTensor()])
     for x in["train", "valid"]}
 
